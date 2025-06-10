@@ -36,8 +36,24 @@ class SecurityConfig {
         return http
             .csrf { csrf -> csrf.disable() } // Cross-Site Forgery
             .authorizeHttpRequests { auth -> auth
-                .anyRequest().permitAll()
-            } // Los recursos protegidos y publicos
+
+                //Asignaciones no debe ser actualizado por el usuario
+                .requestMatchers(HttpMethod.GET,"api/asignaciones/").permitAll()
+                .requestMatchers("/api/asignaciones/**").denyAll()
+
+                //Usuarios
+                .requestMatchers(HttpMethod.POST,"/api/usuarios/**").permitAll()
+                .requestMatchers(HttpMethod.DELETE,"/api/usuarios/{id}").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.PUT,"/api/usuarios/{id}").hasRole("ADMIN")
+                .requestMatchers("/api/usuarios/**").authenticated()
+
+                //Proyectos
+                .requestMatchers(HttpMethod.POST,"/api/proyectos/").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.DELETE,"/api/proyectos/{id}").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.PUT,"/api/proyectos/{id}").hasRole("ADMIN")
+                .requestMatchers("/api/proyectos/**").authenticated()
+                .anyRequest().authenticated()
+            }
             .oauth2ResourceServer { oauth2 -> oauth2.jwt(Customizer.withDefaults()) }
             .sessionManagement { session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS) }
             .httpBasic(Customizer.withDefaults())

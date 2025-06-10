@@ -12,7 +12,7 @@ class ProyectoController(
     private val proyectoService: ProyectoService
 ) {
 
-    @GetMapping
+    @GetMapping("/")
     fun getAll(): List<Proyecto> =
         proyectoService.findAll()
 
@@ -22,7 +22,7 @@ class ProyectoController(
         return ResponseEntity.ok(proyecto)
     }
 
-    @PostMapping
+    @PostMapping("/")
     fun create(@RequestBody proyecto: Proyecto): ResponseEntity<Proyecto> {
         val creado = proyectoService.create(proyecto)
         return ResponseEntity.status(HttpStatus.CREATED).body(creado)
