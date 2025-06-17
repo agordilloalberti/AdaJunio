@@ -13,7 +13,7 @@ class AsignacionController(
     private val asignacionService: AsignacionService
 ) {
 
-    @GetMapping
+    @GetMapping("/")
     fun getAll(): List<Asignacion> =
         asignacionService.findAll()
 
@@ -27,7 +27,7 @@ class AsignacionController(
         return ResponseEntity.ok(asignacion)
     }
 
-    @PostMapping
+    @PostMapping("/")
     fun create(@RequestBody asignacion: Asignacion): ResponseEntity<Asignacion> {
         val creado = asignacionService.create(asignacion)
         return ResponseEntity.status(HttpStatus.CREATED).body(creado)
