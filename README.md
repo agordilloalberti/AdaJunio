@@ -76,7 +76,22 @@ Se creran 5 endpoints.
   5-delete: se envia una petición delete con un id como parametro y se devuelve un código 204 si es correcto y un código 400 si falla, lanzando una IllegalArgumentException.
 
 
+***Tabla: Asignaciones***
 
+Ruta: .../api/asignaciones
+Se crearan 4 endpoints
+
+  Ruta: ../
+  1-GetAll: se envia una peticion get sin argumentos y se reciben todos las asignaciones.
+
+  Ruta: ../{id}
+  2-GetByID: se envia una petición get con el id del usuario y del proyecto como parametros y se recibe la asignacion a la que correspondan o un código 404 si no se encuentra, genera una ResponseStatusExceptión.
+  
+  Ruta: ../
+  3-create: se envia una petición post con un JSON para los datos de la asignacion y se devuelve un codigo 201 o un 400 si no ocurre, lanzando una IllegalArgumentException
+
+  Ruta: ../{id}
+  4-delete: se envia una petición delete con el id del usuario y del proyecto como parametros y se devuelve un código 204 si es correcto y un código 400 si falla, lanzando una IllegalArgumentException.
 
 
 
