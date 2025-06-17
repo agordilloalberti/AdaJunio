@@ -37,19 +37,28 @@ Se creran 6 endpoints.
 
 
   Ruta: ../
+  
   1-GetAll: se envia una peticion get sin argumentos y se reciben todos los usuarios registrados.
 
+
   Ruta: ../{id}
+  
   2-GetByID: se envia una petición get con el id como parametro y se recibe el usuario al que le corresponda o un código 404 si no es encontrado, genera una ResponseStatusExceptión.
 
+
   Ruta: ../
+
   3-Login: se envia una petición post con un JSON para los datos del usuario y se devuelve el token de usuario o un código 404 si el usuario no existe, lanza una NotFoundException.
 
   Ruta: ../
+
+  
   4-create: se envia una petición post con un JSON para los datos del usuario y se devuelve un codigo 201 o un 400 si no ocurre, lanzando una IllegalArgumentException
 
   Ruta: ../{id}
+
   5-update: se envia una petición put con un id como parametro y un JSON con los nuevos datos se devuleve un codigo 200 si es correcto y si no un código 400, lanzando una IllegalArgumentException
+
 
   Ruta: ../{id}
   6-delete: se envia una petición delete con un id como parametro y se devuelve un código 204 si es correcto y un código 400 si falla, lanzando una IllegalArgumentException.
@@ -61,18 +70,27 @@ Ruta: .../api/proyectos
 Se creran 5 endpoints.
 
   Ruta: ../
+  
   1-GetAll: se envia una peticion get sin argumentos y se reciben todos los proyectos registrados.
 
+
   Ruta: ../{id}
+  
   2-GetByID: se envia una petición get con el id como parametro y se recibe el proyecto al que le corresponda o un código 404 si no es encontrado, genera una ResponseStatusExceptión.
+
   
   Ruta: ../
+  
   3-create: se envia una petición post con un JSON para los datos del proyecto y se devuelve un codigo 201 o un 400 si no ocurre, lanzando una IllegalArgumentException
 
-  Ruta: ../{id}
-  4-update: se envia una petición put con un id como parametro y un JSON con los nuevos datos se devuleve un codigo 200 si es correcto y si no un código 400, lanzando una IllegalArgumentException
 
   Ruta: ../{id}
+  
+  4-update: se envia una petición put con un id como parametro y un JSON con los nuevos datos se devuleve un codigo 200 si es correcto y si no un código 400, lanzando una IllegalArgumentException
+
+  
+  Ruta: ../{id}
+  
   5-delete: se envia una petición delete con un id como parametro y se devuelve un código 204 si es correcto y un código 400 si falla, lanzando una IllegalArgumentException.
 
 
@@ -81,16 +99,24 @@ Se creran 5 endpoints.
 Ruta: .../api/asignaciones
 Se crearan 4 endpoints
 
+
   Ruta: ../
+  
   1-GetAll: se envia una peticion get sin argumentos y se reciben todos las asignaciones.
 
-  Ruta: ../{id}
-  2-GetByID: se envia una petición get con el id del usuario y del proyecto como parametros y se recibe la asignacion a la que correspondan o un código 404 si no se encuentra, genera una ResponseStatusExceptión.
-  
-  Ruta: ../
-  3-create: se envia una petición post con un JSON para los datos de la asignacion y se devuelve un codigo 201 o un 400 si no ocurre, lanzando una IllegalArgumentException
 
   Ruta: ../{id}
+  
+  2-GetByID: se envia una petición get con el id del usuario y del proyecto como parametros y se recibe la asignacion a la que correspondan o un código 404 si no se encuentra, genera una ResponseStatusExceptión.
+
+  
+  Ruta: ../
+  
+  3-create: se envia una petición post con un JSON para los datos de la asignacion y se devuelve un codigo 201 o un 400 si no ocurre, lanzando una IllegalArgumentException
+
+
+  Ruta: ../{id}
+  
   4-delete: se envia una petición delete con el id del usuario y del proyecto como parametros y se devuelve un código 204 si es correcto y un código 400 si falla, lanzando una IllegalArgumentException.
 
 
